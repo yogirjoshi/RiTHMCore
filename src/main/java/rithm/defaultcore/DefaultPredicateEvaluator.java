@@ -2,10 +2,10 @@ package rithm.defaultcore;
 
 import java.util.HashMap;
 
-import com.google.gson.Gson;
-
 import rithm.core.PredicateEvaluator;
 import rithm.core.PredicateState;
+
+import com.google.gson.Gson;
 
 
 public class DefaultPredicateEvaluator extends PredicateEvaluator{

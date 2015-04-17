@@ -1,5 +1,5 @@
 package rithm.defaultcore;
-import rithm.core.RiTHMPredicate;;
+import rithm.core.RiTHMPredicate;
 public class DefaultRiTHMPredicate implements RiTHMPredicate{
 
 	protected String predTxt;

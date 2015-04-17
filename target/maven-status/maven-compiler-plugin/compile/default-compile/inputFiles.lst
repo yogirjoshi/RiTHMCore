@@ -19,9 +19,11 @@
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultProgStateCollection.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/MonVerdictFormatter.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/RiTHMMonitor.java
+/home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultRegExPredicateState.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultRiTHMTruthValue.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/PredicateEvaluator.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultRiTHMSpecificationResult.java
+/home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultRiTHMTimedTruthValue.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/RiTHMTruthValue.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultProgramState.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/RiTHMPredicate.java

@@ -3,7 +3,6 @@
  */
 package rithm.core;
 
-import java.rmi.NoSuchObjectException;
 
 /**
  * @author y2joshi

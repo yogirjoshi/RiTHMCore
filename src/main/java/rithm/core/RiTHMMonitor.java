@@ -1,8 +1,5 @@
 package rithm.core;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
 
 public interface RiTHMMonitor{
 	public boolean SetFormulas(RiTHMSpecificationCollection Specs);

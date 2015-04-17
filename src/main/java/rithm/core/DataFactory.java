@@ -3,7 +3,6 @@
  */
 package rithm.core;
 
-import java.util.Collection;
 
 /**
  * @author y2joshi

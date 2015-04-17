@@ -2,7 +2,7 @@ package rithm.defaultcore;
 
 import rithm.core.MonitoringEventListener;
 import rithm.core.RiTHMSpecification;
-import rithm.core.RiTHMTruthValue;;
+import rithm.core.RiTHMTruthValue;
 public class DefaultMonitoringEventListener extends MonitoringEventListener{
 	
 	@Override

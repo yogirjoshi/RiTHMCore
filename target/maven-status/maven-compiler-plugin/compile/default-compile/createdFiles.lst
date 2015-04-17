@@ -3,6 +3,7 @@ rithm/defaultcore/DefaultMonState.class
 rithm/defaultcore/DefaultProgramState.class
 rithm/defaultcore/DefaultPredicateState.class
 rithm/core/MonVerdictFormatter.class
+rithm/defaultcore/DefaultRegExPredicateState.class
 rithm/core/RiTHMPlugin.class
 rithm/defaultcore/DefaultRiTHMSpecificationCollection.class
 rithm/defaultcore/DefaultRiTHMTruthValue.class
@@ -21,6 +22,7 @@ rithm/core/RiTHMSpecification.class
 rithm/defaultcore/DefaultRiTHMPredicate.class
 rithm/core/ProgState.class
 rithm/core/MonState.class
+rithm/defaultcore/DefaultRiTHMTimedTruthValue.class
 rithm/defaultcore/DefaultPredicateEvaluator.class
 rithm/defaultcore/DefaultMonitoringEventListener.class
 rithm/core/PredicateState.class
