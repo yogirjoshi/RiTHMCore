@@ -72,14 +72,14 @@ public class JSPredicateEvaluator extends DefaultPredicateEvaluator{
 			Bindings obj = (Bindings)cscript.eval(currBindings);
 			for(String key1: obj.keySet())
 				this.prState.setValue(key1, Boolean.valueOf(obj.get(key1).toString()));
-			System.out.println("Hi" + this.prState);
+//			System.out.println("Hi" + this.prState);
 		}
 		catch(Exception se)
 		{
 			System.out.println(se.getMessage());
 		}
-		if(pState.getValue("timestamp") != null)
-			prState.setTimestamp(Double.parseDouble(pState.getValue("timestamp")));
+//		if(pState.getValue("timestamp") != null)
+//			prState.setTimestamp(Double.parseDouble(pState.getValue("timestamp")));
 		return prState;
 	}
 	

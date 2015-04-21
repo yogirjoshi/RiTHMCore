@@ -67,10 +67,12 @@ public class DefaultPredicateState implements PredicateState{
 	public String toString()
 	{
 		String retVal="";
+		retVal+="---------------------------\n";
 		for(String key : this.predValues.keySet())
 		{
-			retVal+=key + " " + this.predValues.get(key).toString() + "\n";
+			retVal+=key + "=" + this.predValues.get(key).toString() + "\n";
 		}
+		retVal+="---------------------------\n";
 		return retVal;
 	}
 	public int hashCode(){
