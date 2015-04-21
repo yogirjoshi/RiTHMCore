@@ -12,8 +12,8 @@ public abstract class PredicateEvaluator{
 	{
 		this.pState = pState;
 	}
-	abstract public void SetProgStateJson(String pState);
-	abstract public PredicateState EvaluatePredicates();
+	abstract public void setProgStateJson(String pState);
+	abstract public PredicateState evaluatePredicates();
 	public boolean getPredicateValue(String predName)
 	{
 		return prState.getValue(predName);

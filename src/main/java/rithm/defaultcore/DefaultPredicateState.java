@@ -82,4 +82,10 @@ public class DefaultPredicateState implements PredicateState{
 		}
 		return hashVal;
 	}
+	@Override
+	public void setTimestamp(double Value) {
+		// TODO Auto-generated method stub
+		this.timeStamp = Double.toString(Value);
+	}
+	
 }

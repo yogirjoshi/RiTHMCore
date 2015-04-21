@@ -28,4 +28,5 @@ rithm/defaultcore/DefaultMonitoringEventListener.class
 rithm/core/PredicateState.class
 rithm/core/ParserPlugin$type_enum.class
 rithm/core/MonValuation.class
+rithm/defaultcore/JSPredicateEvaluator.class
 rithm/defaultcore/DefaultProgStateCollection.class

@@ -1,6 +1,8 @@
 package rithm.defaultcore;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
 
 import rithm.core.ProgState;
 
@@ -11,24 +13,26 @@ public class DefaultProgramState extends ProgState{
 		super(timestamp);
 		field_dictionary = new HashMap<String, String>();
 	}
-	public String GetVal(String key)
-	{
-		if(field_dictionary.containsKey(key))
-			return field_dictionary.get(key);
+	
+	@Override
+	public String getValue(String progVariable) {
+		// TODO Auto-generated method stub
+		if(field_dictionary.containsKey(progVariable))
+			return field_dictionary.get(progVariable);
 		return null;
 	}
-	public double GetTimestamp()
+
+	@Override
+	public void setValue(String progVariable, String progVariableValue) {
+		// TODO Auto-generated method stub
+		field_dictionary.put(progVariable, progVariableValue);
+	}
+
+	public double getTimestamp()
 	{
 		return this.timestamp;
 	}
-	public boolean SetVal(String key,String Val)
-	{
-		if(field_dictionary.containsKey(key))
-			return false;
-		else
-			field_dictionary.put(key, Val);
-		return true;
-	}
+	
 	public HashMap<String, String> getDictionary()
 	{
 		return this.field_dictionary;
@@ -43,4 +47,11 @@ public class DefaultProgramState extends ProgState{
 		str.append("\n");
 		return str.toString();
 	}
+
+	@Override
+	public Iterator<Entry<String, String>> iterator() {
+		// TODO Auto-generated method stub
+		return this.field_dictionary.entrySet().iterator();
+	}
+	
 }

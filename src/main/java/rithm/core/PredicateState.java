@@ -11,4 +11,5 @@ package rithm.core;
 public interface PredicateState {
 	public boolean setValue(String Name, boolean Value);
 	public boolean getValue(String Name);
+	public void setTimestamp(double Value);
 }

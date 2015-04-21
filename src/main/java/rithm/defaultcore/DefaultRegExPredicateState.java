@@ -17,7 +17,10 @@ public class DefaultRegExPredicateState extends DefaultPredicateState{
 		StringBuffer retBuff = new StringBuffer();
 		for(String key: this.predValues.keySet())
 		{
-			retBuff.append(key);
+			if(predValues.get(key).equals("1"))
+				retBuff.append(key);
+			else
+				retBuff.append("!" + key);
 			retBuff.append("&&");
 		}
 		retBuff.delete(retBuff.length()-2, retBuff.length()-2);

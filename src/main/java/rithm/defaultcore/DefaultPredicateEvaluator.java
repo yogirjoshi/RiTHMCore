@@ -11,18 +11,18 @@ import com.google.gson.Gson;
 public class DefaultPredicateEvaluator extends PredicateEvaluator{
 
 	@Override
-	public void SetProgStateJson(String pState) {
+	public void setProgStateJson(String pState) {
 		// TODO Auto-generated method stub
 		Gson gson = new Gson();
 		DefaultProgramState dpState = gson.fromJson(pState, DefaultProgramState.class );
 		this.pState = dpState;
 	}
-	public void SetProgState(DefaultProgramState pState) {
+	public void setProgState(DefaultProgramState pState) {
 		// TODO Auto-generated method stub
 		this.pState = pState;
 	}
 	@Override
-	public PredicateState EvaluatePredicates() {
+	public PredicateState evaluatePredicates() {
 		// TODO Auto-generated method stub
 		this.prState = new DefaultPredicateState();
 		DefaultProgramState dpstate   = (DefaultProgramState)pState;

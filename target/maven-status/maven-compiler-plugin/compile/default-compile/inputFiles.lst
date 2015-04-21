@@ -16,6 +16,7 @@
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/RiTHMPlugin.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultRiTHMSpecificationCollection.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/ProgState.java
+/home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/JSPredicateEvaluator.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/defaultcore/DefaultProgStateCollection.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/MonVerdictFormatter.java
 /home/y2joshi/workspace/RiTHMCore/src/main/java/rithm/core/RiTHMMonitor.java
