@@ -2,6 +2,8 @@ package rithm.core;
 
 import java.util.ArrayList;
 
+import javax.script.Bindings;
+
 import rithm.defaultcore.DefaultProgramState;
 import rithm.defaultcore.DefaultRiTHMPredicate;
 import rithm.defaultcore.ScriptPredicateEvaluator;
@@ -36,16 +38,30 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+//    public void testJS1()
+//    {
+//    	ArrayList<RiTHMPredicate> predList = new ArrayList<RiTHMPredicate>();
+//    	predList.add(new DefaultRiTHMPredicate("X"));
+//    	predList.add(new DefaultRiTHMPredicate("Y"));
+//        ScriptPredicateEvaluator jsEvaluator = new ScriptPredicateEvaluator("/home/y2joshi/workspace/RiTHMCore/src/test/java/rithm/core/test.js", predList, "JavaScript");
+//        DefaultProgramState pState = new DefaultProgramState(0);
+//        pState.setValue("x", "5");
+//        pState.setValue("y", "4");
+//        jsEvaluator.setProgState(pState);
+//        jsEvaluator.evaluatePredicates();
+//    }
+    public void testLua1()
     {
     	ArrayList<RiTHMPredicate> predList = new ArrayList<RiTHMPredicate>();
     	predList.add(new DefaultRiTHMPredicate("X"));
     	predList.add(new DefaultRiTHMPredicate("Y"));
-        ScriptPredicateEvaluator jsEvaluator = new ScriptPredicateEvaluator("/home/y2joshi/workspace/RiTHMCore/src/test/java/rithm/core/test.js", predList, "JavaScript");
+        ScriptPredicateEvaluator jsEvaluator = new ScriptPredicateEvaluator("/home/y2joshi/workspace/LuaPredicateScripts/src/main.lua", predList, "luaj");
         DefaultProgramState pState = new DefaultProgramState(0);
         pState.setValue("x", "5");
         pState.setValue("y", "4");
         jsEvaluator.setProgState(pState);
-        jsEvaluator.evaluatePredicates();
+        PredicateState ps = jsEvaluator.evaluatePredicates();
+        System.out.println(ps);
     }
+    ///home/y2joshi/workspace/LuaPredicateScripts/src/main.lua
 }
