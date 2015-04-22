@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import rithm.defaultcore.DefaultProgramState;
 import rithm.defaultcore.DefaultRiTHMPredicate;
-import rithm.defaultcore.JSPredicateEvaluator;
+import rithm.defaultcore.ScriptPredicateEvaluator;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -41,7 +41,7 @@ public class AppTest
     	ArrayList<RiTHMPredicate> predList = new ArrayList<RiTHMPredicate>();
     	predList.add(new DefaultRiTHMPredicate("X"));
     	predList.add(new DefaultRiTHMPredicate("Y"));
-        JSPredicateEvaluator jsEvaluator = new JSPredicateEvaluator("/home/y2joshi/workspace/RiTHMCore/src/test/java/rithm/core/test.js", predList);
+        ScriptPredicateEvaluator jsEvaluator = new ScriptPredicateEvaluator("/home/y2joshi/workspace/RiTHMCore/src/test/java/rithm/core/test.js", predList, "JavaScript");
         DefaultProgramState pState = new DefaultProgramState(0);
         pState.setValue("x", "5");
         pState.setValue("y", "4");

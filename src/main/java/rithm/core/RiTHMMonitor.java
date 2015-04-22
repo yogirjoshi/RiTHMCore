@@ -2,15 +2,15 @@ package rithm.core;
 
 
 public interface RiTHMMonitor{
-	public boolean SetFormulas(RiTHMSpecificationCollection Specs);
-	public boolean SynthesizeMonitors(RiTHMSpecificationCollection Specs);
-	public boolean SynthesizeMonitors(String Filename);
+	public boolean setFormulas(RiTHMSpecificationCollection Specs);
+	public boolean synthesizeMonitors(RiTHMSpecificationCollection Specs);
+	public boolean synthesizeMonitors(String Filename);
 	public RiTHMResultCollection runMonitor();
-	public boolean SetTraceFile(String FileName);
-	public boolean FillBuffer(ProgState ps);
-	public void SetMonitoringEventListener(MonitoringEventListener mel);
-	public void SetMonitorValuation(MonValuation val);
-	public void SetPredicateEvaluator(PredicateEvaluator pe);
+	public boolean setTraceFile(String FileName);
+	public boolean fillBuffer(ProgState ps);
+	public void setMonitoringEventListener(MonitoringEventListener mel);
+	public void setMonitorValuation(MonValuation val);
+	public void setPredicateEvaluator(PredicateEvaluator pe);
 	public void setOutFile(String outFile);
 	public void setParser(ParserPlugin parser);
 }
