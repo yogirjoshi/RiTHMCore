@@ -9,4 +9,6 @@ package rithm.core;
  */
 public interface RiTHMTruthValue {
 	public String getTruthValueDescription();
+	public double getTimetamp();
+	public void setTimetamp(double ts);
 }

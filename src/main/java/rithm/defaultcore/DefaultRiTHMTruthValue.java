@@ -25,4 +25,16 @@ public class DefaultRiTHMTruthValue implements RiTHMTruthValue{
 		hashVal+=this.truthValue.hashCode();
 		return hashVal;
 	}
+	@Override
+	public double getTimetamp() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setTimetamp(double ts) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

@@ -14,11 +14,13 @@ rithm/core/RiTHMPredicate.class
 rithm/core/MonitoringEventListener.class
 rithm/core/PredicateEvaluator.class
 rithm/core/RiTHMResultCollection.class
+rithm/core/RiTHMLogMessages.class
 rithm/defaultcore/DefaultRiTHMSpecificationResult.class
 rithm/core/DataFactory.class
 rithm/defaultcore/DefaultRiTHMSpecification.class
 rithm/core/ParserPlugin.class
 rithm/core/RiTHMSpecification.class
+rithm/defaultcore/ScriptPredicateEvaluator.class
 rithm/defaultcore/DefaultRiTHMPredicate.class
 rithm/core/ProgState.class
 rithm/core/MonState.class

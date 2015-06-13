@@ -50,6 +50,10 @@ public class AppTest
 //        jsEvaluator.setProgState(pState);
 //        jsEvaluator.evaluatePredicates();
 //    }
+    public void testMTL1()
+    {
+    	
+    }
     public void testLua1()
     {
     	ArrayList<RiTHMPredicate> predList = new ArrayList<RiTHMPredicate>();

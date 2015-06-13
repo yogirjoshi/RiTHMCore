@@ -3,7 +3,8 @@ package rithm.core;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
- 
+
+import org.antlr.v4.runtime.tree.ParseTree;
 public abstract class 
 ParserPlugin
 implements RiTHMPlugin{
@@ -101,6 +102,11 @@ implements RiTHMPlugin{
 	 * @return whether the removal was successful*/
 	abstract public boolean removeAllSpecs();
 	
+	/**Returns the antlr parsee tree for a particular Formula
+	 * @param The specification of type <RiTHMSpecification>
+	 * @return ParseTree <ParseTree>*/
+	
+	abstract public ParseTree getTreeforSpec(RiTHMSpecification spec);
 	// TODO change to rithm types
 	abstract public ArrayList<String> getPredsForSpec(String spec);
 	

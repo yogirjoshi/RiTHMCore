@@ -10,6 +10,17 @@ import com.google.gson.Gson;
 
 public class DefaultPredicateEvaluator extends PredicateEvaluator{
 
+	boolean includeFalsePredicates;
+	public DefaultPredicateEvaluator()
+	{
+		super();
+		includeFalsePredicates = false;
+	}
+	public DefaultPredicateEvaluator(boolean includeFalsePredicates)
+	{
+		super();
+		this.includeFalsePredicates = includeFalsePredicates;
+	}
 	@Override
 	public void setProgStateJson(String pState) {
 		// TODO Auto-generated method stub
@@ -28,13 +39,14 @@ public class DefaultPredicateEvaluator extends PredicateEvaluator{
 		DefaultProgramState dpstate   = (DefaultProgramState)pState;
 		DefaultPredicateState dprstate = (DefaultPredicateState) prState;
 		HashMap<String, String> dictProg = dpstate.field_dictionary;
-		dprstate.timeStamp = dpstate.field_dictionary.get("timestamp");
+		dprstate.timeStamp = Double.toString(dpstate.getTimestamp());
 		for(String key: dictProg.keySet())
 		{
 			if(dpstate.getDictionary().get(key).equals(Integer.toString(1)))
 				dprstate.setValue(key, true);
-//			else
-//				dprstate.SetValue(key, false);
+			else
+				if(includeFalsePredicates)
+					dprstate.setValue(key, false);
 		}
 //		if(dpstate.GetVal("trying").equals(Integer.toString(1)))
 //			dprstate.SetValue("trying", true);

@@ -72,6 +72,7 @@ public class DefaultPredicateState implements PredicateState{
 		{
 			retVal+=key + "=" + this.predValues.get(key).toString() + "\n";
 		}
+		retVal+= "timestamp =" + this.timeStamp;
 		retVal+="---------------------------\n";
 		return retVal;
 	}
@@ -88,6 +89,11 @@ public class DefaultPredicateState implements PredicateState{
 	public void setTimestamp(double Value) {
 		// TODO Auto-generated method stub
 		this.timeStamp = Double.toString(Value);
+	}
+	@Override
+	public double getTimestamp() {
+		// TODO Auto-generated method stub
+		return Double.parseDouble(timeStamp);
 	}
 	
 }

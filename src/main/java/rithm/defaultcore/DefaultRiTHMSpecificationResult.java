@@ -22,8 +22,11 @@ public class DefaultRiTHMSpecificationResult extends RiTHMResultCollection{
 	@Override
 	public RiTHMTruthValue getResult(RiTHMSpecification spec) {
 		// TODO Auto-generated method stub
-		specStatus.get(spec);
-		return null;
+		return specStatus.get(spec);
+//		return null;
 	}
-
+	public String toString()
+	{
+		return specStatus.toString();
+	}
 }
