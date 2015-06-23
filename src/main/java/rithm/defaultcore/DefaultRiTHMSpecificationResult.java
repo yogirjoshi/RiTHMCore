@@ -1,6 +1,7 @@
 package rithm.defaultcore;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 import rithm.core.RiTHMResultCollection;
 import rithm.core.RiTHMSpecification;
@@ -24,6 +25,15 @@ public class DefaultRiTHMSpecificationResult extends RiTHMResultCollection{
 		// TODO Auto-generated method stub
 		return specStatus.get(spec);
 //		return null;
+	}
+	
+	@Override
+	public Iterator<RiTHMSpecification> iterator() {
+		// TODO Auto-generated method stub
+		if(specStatus != null)
+			return specStatus.keySet().iterator();
+		else
+			throw new IllegalArgumentException("Iterator on a null collectio");
 	}
 	public String toString()
 	{

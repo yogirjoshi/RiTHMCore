@@ -4,7 +4,7 @@ package rithm.core;
 public interface RiTHMMonitor{
 	public boolean setFormulas(RiTHMSpecificationCollection Specs);
 	public boolean synthesizeMonitors(RiTHMSpecificationCollection Specs);
-	public boolean synthesizeMonitors(String Filename);
+	public boolean synthesizeMonitors(String Filename, boolean isFile);
 	public RiTHMResultCollection runMonitor();
 	public boolean setTraceFile(String FileName);
 	public boolean fillBuffer(ProgState ps);

@@ -1,7 +1,10 @@
 package rithm.defaultcore;
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.*;
 
 import javax.script.*;
@@ -16,17 +19,17 @@ import rithm.core.RiTHMPredicate;
 
 import org.luaj.vm2.LuaTable;
 public class ScriptPredicateEvaluator extends DefaultPredicateEvaluator{
-	protected ArrayList<RiTHMPredicate> predList;
+//	protected ArrayList<RiTHMPredicate> predList;
 	protected ScriptEngineManager mgr;
 	protected ScriptEngine engine;
 	protected Compilable compilingEngine;
 	protected CompiledScript cscript;
 	protected String scriptLang;
-	public ScriptPredicateEvaluator(String filePath, ArrayList<RiTHMPredicate> predList, String scriptLang)
+	public ScriptPredicateEvaluator(String evalScript, String scriptLang, boolean isFile)
 	{
 		super();
 		this.scriptLang = scriptLang;
-		this.predList = predList;
+//		this.predList = predList;
 		mgr = new ScriptEngineManager();
 		engine = mgr.getEngineByName(scriptLang);
 		Compilable compilingEngine;
@@ -41,7 +44,15 @@ public class ScriptPredicateEvaluator extends DefaultPredicateEvaluator{
 		BufferedReader br = null;
 		try
 		{
-			br = new BufferedReader(new FileReader(filePath));
+			if(isFile)
+			{
+				br = new BufferedReader(new FileReader(evalScript));
+			}
+			else
+			{
+				InputStream is = new ByteArrayInputStream(evalScript.getBytes());
+				br = new BufferedReader(new InputStreamReader(is));
+			}
 			cscript = compilingEngine.compile(br);
 		}
 		catch(IOException ioe)

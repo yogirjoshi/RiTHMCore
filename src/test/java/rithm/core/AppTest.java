@@ -59,13 +59,14 @@ public class AppTest
     	ArrayList<RiTHMPredicate> predList = new ArrayList<RiTHMPredicate>();
     	predList.add(new DefaultRiTHMPredicate("X"));
     	predList.add(new DefaultRiTHMPredicate("Y"));
-        ScriptPredicateEvaluator jsEvaluator = new ScriptPredicateEvaluator("/home/y2joshi/workspace/LuaPredicateScripts/src/main.lua", predList, "luaj");
+        ScriptPredicateEvaluator jsEvaluator = new ScriptPredicateEvaluator("/home/y2joshi/workspace/rithmcore/src/test/resources/test1.lua", "luaj",true);
         DefaultProgramState pState = new DefaultProgramState(0);
         pState.setValue("x", "5");
         pState.setValue("y", "4");
         jsEvaluator.setProgState(pState);
         PredicateState ps = jsEvaluator.evaluatePredicates();
-        System.out.println(ps);
+        assertTrue(ps.getValue("X"));
+        assertFalse(ps.getValue("Y"));
     }
     ///home/y2joshi/workspace/LuaPredicateScripts/src/main.lua
 }

@@ -42,7 +42,7 @@ public class DefaultProgramState extends ProgState{
 		StringBuffer str = new StringBuffer();
 		for(String key : field_dictionary.keySet())
 		{
-			str.append(" " + key + "=" + field_dictionary.get(key) +"\n");
+			str.append(" " + key + ":=" + field_dictionary.get(key) +"\n");
 		}
 		str.append("\n");
 		return str.toString();
