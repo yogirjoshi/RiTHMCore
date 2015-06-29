@@ -44,7 +44,8 @@ public class DefaultPredicateState implements PredicateState{
 		if(predValues.containsKey(Name))
 			return predValues.get(Name);
 		else
-			throw new RuntimeException("No Predicate Value set for " + Name);
+			return false;
+//			throw new RuntimeException("No Predicate Value set for " + Name);
 	}
 	
 	public boolean equals(Object obj)

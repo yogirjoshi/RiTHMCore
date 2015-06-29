@@ -10,6 +10,11 @@ public class DefaultRiTHMTimedTruthValue implements RiTHMTruthValue {
 	{
 		this.truthValue = truthValue;
 	}
+	public DefaultRiTHMTimedTruthValue(String truthValue, double timestamp)
+	{
+		this.truthValue = truthValue;
+		this.timeStamp = timestamp;
+	}
 	public String getTruthValueDescription() {
 		// TODO Auto-generated method stub
 		return truthValue;

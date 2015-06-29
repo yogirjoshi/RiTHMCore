@@ -16,9 +16,13 @@ public abstract class ProgState implements Iterable<Map.Entry<String, String>>, 
 	public ProgState(double timestamp) {
 		this.timestamp = timestamp;
 	}
-	public double getTimestamp()
+	public final double getTimestamp()
 	{
 		return timestamp;
+	}
+	public final void setTimestamp(double timestamp)
+	{
+		this.timestamp = timestamp;
 	}
 	abstract public String getValue(String progVariable);
 	abstract public void  setValue(String progVariable, String progVariableValue);

@@ -24,7 +24,7 @@ public class DefaultProgStateCollection extends RiTHMProgStateCollection{
 		return true;
 	}
 	@Override
-	public ProgState get(long index) {
+	public ProgState get(int index) {
 		// TODO Auto-generated method stub
 		return progStateList.get((int)index);
 	}
@@ -32,6 +32,11 @@ public class DefaultProgStateCollection extends RiTHMProgStateCollection{
 	public void clear() {
 		// TODO Auto-generated method stub
 		this.progStateList.clear();
+	}
+	@Override
+	public int length() {
+		// TODO Auto-generated method stub
+		return this.progStateList.size();
 	}
 	
 }

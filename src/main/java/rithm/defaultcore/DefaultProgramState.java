@@ -27,11 +27,6 @@ public class DefaultProgramState extends ProgState{
 		// TODO Auto-generated method stub
 		field_dictionary.put(progVariable, progVariableValue);
 	}
-
-	public double getTimestamp()
-	{
-		return this.timestamp;
-	}
 	
 	public HashMap<String, String> getDictionary()
 	{
