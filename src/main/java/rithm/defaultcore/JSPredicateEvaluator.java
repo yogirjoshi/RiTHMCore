@@ -9,15 +9,36 @@ import javax.script.*;
 import java.util.Map;
 
 import rithm.core.PredicateState;
-import rithm.core.RiTHMPredicate;
+import rithm.core.RitHMPredicate;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class JSPredicateEvaluator.
+ */
 public class JSPredicateEvaluator extends DefaultPredicateEvaluator{
-	protected ArrayList<RiTHMPredicate> predList;
+	
+	/** The pred list. */
+	protected ArrayList<RitHMPredicate> predList;
+	
+	/** The mgr. */
 	protected ScriptEngineManager mgr;
+	
+	/** The engine. */
 	protected ScriptEngine engine;
+	
+	/** The compiling engine. */
 	protected Compilable compilingEngine;
+	
+	/** The cscript. */
 	protected CompiledScript cscript;
-	public JSPredicateEvaluator(String filePath, ArrayList<RiTHMPredicate> predList)
+	
+	/**
+	 * Instantiates a new JS predicate evaluator.
+	 *
+	 * @param filePath the file path
+	 * @param predList the pred list
+	 */
+	public JSPredicateEvaluator(String filePath, ArrayList<RitHMPredicate> predList)
 	{
 		super();
 		this.predList = predList;
@@ -55,6 +76,10 @@ public class JSPredicateEvaluator extends DefaultPredicateEvaluator{
 			}
 		}
 	}
+	
+	/* (non-Javadoc)
+	 * @see rithm.defaultcore.DefaultPredicateEvaluator#evaluatePredicates()
+	 */
 	@Override
 	public PredicateState evaluatePredicates() {
 		// TODO Auto-generated method stub

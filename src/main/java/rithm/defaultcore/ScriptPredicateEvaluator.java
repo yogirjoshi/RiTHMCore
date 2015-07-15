@@ -15,16 +15,39 @@ import org.luaj.vm2.LuaValue;
 import java.util.Map;
 
 import rithm.core.PredicateState;
-import rithm.core.RiTHMPredicate;
+import rithm.core.RitHMPredicate;
 
 import org.luaj.vm2.LuaTable;
+// TODO: Auto-generated Javadoc
+
+/**
+ * The Class ScriptPredicateEvaluator.
+ */
 public class ScriptPredicateEvaluator extends DefaultPredicateEvaluator{
+
+/** The mgr. */
 //	protected ArrayList<RiTHMPredicate> predList;
 	protected ScriptEngineManager mgr;
+	
+	/** The engine. */
 	protected ScriptEngine engine;
+	
+	/** The compiling engine. */
 	protected Compilable compilingEngine;
+	
+	/** The cscript. */
 	protected CompiledScript cscript;
+	
+	/** The script lang. */
 	protected String scriptLang;
+	
+	/**
+	 * Instantiates a new script predicate evaluator.
+	 *
+	 * @param evalScript the eval script
+	 * @param scriptLang the script lang
+	 * @param isFile the is file
+	 */
 	public ScriptPredicateEvaluator(String evalScript, String scriptLang, boolean isFile)
 	{
 		super();
@@ -72,6 +95,10 @@ public class ScriptPredicateEvaluator extends DefaultPredicateEvaluator{
 			}
 		}
 	}
+	
+	/* (non-Javadoc)
+	 * @see rithm.defaultcore.DefaultPredicateEvaluator#evaluatePredicates()
+	 */
 	@Override
 	public PredicateState evaluatePredicates() {
 		// TODO Auto-generated method stub

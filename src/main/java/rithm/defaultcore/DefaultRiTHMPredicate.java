@@ -1,16 +1,36 @@
 package rithm.defaultcore;
-import rithm.core.RiTHMPredicate;
-public class DefaultRiTHMPredicate implements RiTHMPredicate{
+import rithm.core.RitHMPredicate;
+// TODO: Auto-generated Javadoc
 
+/**
+ * The Class DefaultRiTHMPredicate.
+ */
+public class DefaultRiTHMPredicate implements RitHMPredicate{
+
+	/** The pred txt. */
 	protected String predTxt;
+	
+	/**
+	 * Instantiates a new default ri thm predicate.
+	 *
+	 * @param predTxt the pred txt
+	 */
 	public DefaultRiTHMPredicate(String predTxt)
 	{
 		this.predTxt = predTxt;
 	}
+	
+	/* (non-Javadoc)
+	 * @see rithm.core.RiTHMPredicate#getTextDescription()
+	 */
 	public String getTextDescription() {
 		// TODO Auto-generated method stub
 		return predTxt;
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	public boolean equals(Object obj)
 	{
 		if(!(obj instanceof DefaultRiTHMPredicate))
@@ -19,6 +39,10 @@ public class DefaultRiTHMPredicate implements RiTHMPredicate{
 		
 		return pred2.predTxt.equals(this.predTxt);
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	public int hashCode(){
 		int hashVal=0;
 		hashVal+=this.predTxt.hashCode();

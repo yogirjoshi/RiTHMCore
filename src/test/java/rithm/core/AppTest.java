@@ -11,14 +11,16 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+// TODO: Auto-generated Javadoc
 /**
  * Unit test for simple App.
  */
 public class AppTest 
     extends TestCase
 {
+    
     /**
-     * Create the test case
+     * Create the test case.
      *
      * @param testName name of the test case
      */
@@ -28,6 +30,8 @@ public class AppTest
     }
 
     /**
+     * Suite.
+     *
      * @return the suite of tests being tested
      */
     public static Test suite()
@@ -36,7 +40,7 @@ public class AppTest
     }
 
     /**
-     * Rigourous Test :-)
+     * Rigourous Test :-).
      */
 //    public void testJS1()
 //    {
@@ -54,9 +58,13 @@ public class AppTest
     {
     	
     }
+    
+    /**
+     * Test lua1.
+     */
     public void testLua1()
     {
-    	ArrayList<RiTHMPredicate> predList = new ArrayList<RiTHMPredicate>();
+    	ArrayList<RitHMPredicate> predList = new ArrayList<RitHMPredicate>();
     	predList.add(new DefaultRiTHMPredicate("X"));
     	predList.add(new DefaultRiTHMPredicate("Y"));
         ScriptPredicateEvaluator jsEvaluator = new ScriptPredicateEvaluator("/home/y2joshi/workspace/rithmcore/src/test/resources/test1.lua", "luaj",true);

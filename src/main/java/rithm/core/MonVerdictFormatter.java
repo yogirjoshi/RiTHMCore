@@ -3,13 +3,29 @@
  */
 package rithm.core;
 
+// TODO: Auto-generated Javadoc
 /**
- * @author y2joshi
+ * The Interface MonVerdictFormatter.
  *
+ * @author y2joshi
  */
 public interface MonVerdictFormatter{
 	
-	public void bufferVerdict(RiTHMSpecification specId,MonState monState);
+	/**
+	 * Buffer verdict.
+	 *
+	 * @param specId the spec id
+	 * @param monState the mon state
+	 */
+	public void bufferVerdict(RitHMSpecification specId,MonState monState);
+	
+	/**
+	 * Write verdict.
+	 */
 	public void writeVerdict();
+	
+	/**
+	 * Write all.
+	 */
 	public void writeAll();
 }

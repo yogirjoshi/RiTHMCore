@@ -3,38 +3,61 @@ package rithm.defaultcore;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import rithm.core.RiTHMResultCollection;
-import rithm.core.RiTHMSpecification;
-import rithm.core.RiTHMTruthValue;
+import rithm.core.RitHMResultCollection;
+import rithm.core.RitHMSpecification;
+import rithm.core.RitHMTruthValue;
 
-public class DefaultRiTHMSpecificationResult extends RiTHMResultCollection{
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DefaultRiTHMSpecificationResult.
+ */
+public class DefaultRiTHMSpecificationResult extends RitHMResultCollection{
 	
-	HashMap<RiTHMSpecification,RiTHMTruthValue> specStatus;
+	/** The spec status. */
+	HashMap<RitHMSpecification,RitHMTruthValue> specStatus;
+	
+	/**
+	 * Instantiates a new default ri thm specification result.
+	 */
 	public DefaultRiTHMSpecificationResult()
 	{
-		specStatus = new HashMap<RiTHMSpecification, RiTHMTruthValue>();
+		specStatus = new HashMap<RitHMSpecification, RitHMTruthValue>();
 	}
+	
+	/* (non-Javadoc)
+	 * @see rithm.core.RiTHMResultCollection#setResult(rithm.core.RiTHMSpecification, rithm.core.RiTHMTruthValue)
+	 */
 	@Override
-	public void setResult(RiTHMSpecification spec, RiTHMTruthValue truthVal) {
+	public void setResult(RitHMSpecification spec, RitHMTruthValue truthVal) {
 		// TODO Auto-generated method stub
 		specStatus.put(spec, truthVal);
 	}
 
+	/* (non-Javadoc)
+	 * @see rithm.core.RiTHMResultCollection#getResult(rithm.core.RiTHMSpecification)
+	 */
 	@Override
-	public RiTHMTruthValue getResult(RiTHMSpecification spec) {
+	public RitHMTruthValue getResult(RitHMSpecification spec) {
 		// TODO Auto-generated method stub
 		return specStatus.get(spec);
 //		return null;
 	}
 	
+	/* (non-Javadoc)
+	 * @see rithm.core.RiTHMResultCollection#iterator()
+	 */
 	@Override
-	public Iterator<RiTHMSpecification> iterator() {
+	public Iterator<RitHMSpecification> iterator() {
 		// TODO Auto-generated method stub
 		if(specStatus != null)
 			return specStatus.keySet().iterator();
 		else
 			throw new IllegalArgumentException("Iterator on a null collectio");
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString()
 	{
 		return specStatus.toString();
