@@ -9,6 +9,7 @@ rithm/defaultcore/DefaultRiTHMTruthValue.class
 rithm/core/RitHMSpecificationCollection.class
 rithm/core/RitHMResultCollection.class
 rithm/core/RitHMLogMessages.class
+rithm/core/RitHMMonitorTrigger.class
 rithm/core/MonitoringEventListener.class
 rithm/core/PredicateEvaluator.class
 rithm/core/RitHMTruthValue.class

@@ -3,6 +3,8 @@ package rithm.defaultcore;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 import rithm.core.ProgState;
 
@@ -20,6 +22,7 @@ public class DefaultProgramState extends ProgState{
 	 *
 	 * @param timestamp the timestamp
 	 */
+	
 	public DefaultProgramState(double timestamp) {
 		// TODO Auto-generated constructor stub
 		super(timestamp);
@@ -77,6 +80,18 @@ public class DefaultProgramState extends ProgState{
 	public Iterator<Entry<String, String>> iterator() {
 		// TODO Auto-generated method stub
 		return this.field_dictionary.entrySet().iterator();
+	}
+
+	@Override
+	public void forEach(Consumer<? super Entry<String, String>> action) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Spliterator<Entry<String, String>> spliterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

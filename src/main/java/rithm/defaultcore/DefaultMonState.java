@@ -13,7 +13,7 @@ public class DefaultMonState implements MonState{
 	
 	/** The state. */
 	protected String state;
-	
+	 
 	/** The valuation. */
 	protected String valuation;
 	
@@ -26,6 +26,11 @@ public class DefaultMonState implements MonState{
 	 * @param state the state
 	 * @param valuation the valuation
 	 */
+	public DefaultMonState(DefaultMonState ds){
+		this.state = ds.state;
+		this.valuation = ds.valuation;
+		this.transitions = ds.transitions;
+	}
 	public DefaultMonState(String state, String valuation)
 	{
 		this.state = state;

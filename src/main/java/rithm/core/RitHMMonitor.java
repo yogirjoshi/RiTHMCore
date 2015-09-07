@@ -57,12 +57,8 @@ public interface RitHMMonitor extends RitHMPlugin{
 	 */
 	public boolean synthesizeMonitors(String Filename, boolean isFile);
 	
-	/**
-	 * Run monitor.
-	 *
-	 * @return the ri thm result collection
-	 */
-	public RitHMResultCollection runMonitor();
+
+	public RitHMResultCollection runMonitor(boolean isLastInvocation);
 	
 	/**
 	 * Sets the trace file.

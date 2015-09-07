@@ -1,8 +1,14 @@
 package rithm.basemonitors;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import org.apache.log4j.Logger;
 
 import rithm.core.MonValuation;
 import rithm.core.MonitoringEventListener;
@@ -13,6 +19,7 @@ import rithm.core.RitHMMonitor;
 import rithm.core.RitHMSpecification;
 import rithm.core.RitHMSpecificationCollection;
 
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class RiTHMBaseMonitor.
@@ -22,7 +29,15 @@ public abstract class RitHMBaseMonitor implements RitHMMonitor{
 	/** The reset on violation. */
 	protected boolean resetOnViolation = false;
 
-
+	/** The to write output file. */
+	protected boolean toWriteOutputFile = false;
+	
+	/** The to write plot file. */
+	protected boolean toWritePlotFile = false;
+	
+	/** The plot writer. */
+	protected BufferedWriter outWriter = null, plotWriter = null;
+	
 	/** The out file name. */
 	protected String outFileName;
 	
@@ -59,9 +74,11 @@ public abstract class RitHMBaseMonitor implements RitHMMonitor{
 	/** The buffer. */
 	protected ArrayList<PredicateState> buffer;
 	
-	
+	protected boolean firstRun;
 	/** The my name. */
 	protected String myName;
+	
+	final static Logger logger = Logger.getLogger(RitHMBaseMonitor.class);
 	/**
 	 * Instantiates a new ri thm base monitor.
 	 */
@@ -69,6 +86,7 @@ public abstract class RitHMBaseMonitor implements RitHMMonitor{
 	{
 		mlist = new ArrayList<MonitoringEventListener>();
 		predList = null;
+		firstRun = true;
 	}
 	
 	/* (non-Javadoc)
@@ -238,16 +256,81 @@ public abstract class RitHMBaseMonitor implements RitHMMonitor{
 		this.resetOnViolation = resetOnViolation;
 	}
 
+	/* (non-Javadoc)
+	 * @see rithm.core.RitHMPlugin#setName(java.lang.String)
+	 */
 	@Override
 	public void setName(String name) {
 		// TODO Auto-generated method stub
 		myName = name;
 	}
 
+	/* (non-Javadoc)
+	 * @see rithm.core.RitHMPlugin#getName()
+	 */
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return myName;
 	}
 	
+	/**
+	 * Open verbose files.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	public void openVerboseFiles(){
+		try{
+			if(outFileName != null && !toWriteOutputFile){
+				outWriter = new BufferedWriter(new FileWriter(new File(outFileName)));
+				toWriteOutputFile = true;
+			}
+		}catch(IOException ie){
+			logger.fatal(ie.getMessage());
+		}
+		try{
+			if(plotFileName != null && !toWritePlotFile){
+				plotWriter = new BufferedWriter(new FileWriter(new File(plotFileName)));
+				toWritePlotFile = true;
+			}
+		}catch(IOException ie){
+			logger.fatal(ie.getMessage());
+		}
+	}
+	public final boolean writeMonitoriLogFile(String message){
+		if(toWriteOutputFile){
+			try {
+				outWriter.write(message);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				logger.fatal(e.getMessage());
+				return false;
+			}
+		}
+		return true;
+	}
+	public final boolean writeMonitorPlotFile(String message){
+		if(toWritePlotFile){
+			try {
+				plotWriter.write(message);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				logger.fatal(e.getMessage());
+				return false;
+			}
+		}
+		return true;
+	}
+	/**
+	 * Close verbose files.
+	 *
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	public void closeVerboseFiles() throws IOException{
+		if(toWriteOutputFile)
+			outWriter.close();
+		if(toWritePlotFile)
+			plotWriter.close();
+	}
+
 }

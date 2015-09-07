@@ -12,7 +12,7 @@ package rithm.core;
  *
  * @see MonitoringEventEvent
  */
-public abstract class MonitoringEventListener {
+public abstract class MonitoringEventListener implements RitHMPlugin{
 	
 	/**
 	 * Mon valuation changed.
@@ -20,5 +20,18 @@ public abstract class MonitoringEventListener {
 	 * @param Spec the spec
 	 * @param truthVal the truth val
 	 */
+	protected String myName;
 	abstract public void MonValuationChanged(RitHMSpecification Spec, RitHMTruthValue truthVal);
+
+	@Override
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		myName = name;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return myName;
+	}
 }

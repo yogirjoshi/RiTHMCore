@@ -13,4 +13,6 @@ public interface MonState {
 	 * @return the mon state
 	 */
 	public	MonState GetNextMonState(PredicateState Pred); 
+	
+	public String getValuation();
 }

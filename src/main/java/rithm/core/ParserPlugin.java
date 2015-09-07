@@ -179,6 +179,10 @@ implements RitHMPlugin{
 	// TODO change to rithm types
 	abstract public ArrayList<String> getPredsForSpec(String spec);
 	
+	public ArrayList<String> getObjectIDs(String spec){
+		throw new UnsupportedOperationException("Not supported");
+	}
+	
 	/**
 	 * Rewrite spec.
 	 *

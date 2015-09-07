@@ -97,6 +97,6 @@ public abstract class DataFactory implements RitHMPlugin{
 		// TODO Auto-generated method stub
 		return myName;
 	}
-	
+	abstract public boolean closeDataSource();
 	
 }

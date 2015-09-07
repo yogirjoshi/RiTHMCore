@@ -42,4 +42,8 @@ public interface PredicateState {
 	 * @return the timestamp
 	 */
 	public double getTimestamp();
+	
+	public String getObjID(String Name);
+	
+	public void setObjID(String Name, String value);
 }

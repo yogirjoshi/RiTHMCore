@@ -1,6 +1,7 @@
 package rithm.defaultcore;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import rithm.core.PredicateState;
 
@@ -11,8 +12,8 @@ import rithm.core.PredicateState;
 public class DefaultPredicateState implements PredicateState{
 	
 	/** The pred values. */
-	protected HashMap<String, Boolean> predValues;
-	
+	protected LinkedHashMap<String, Boolean> predValues;
+	protected LinkedHashMap<String, String> objIDs;
 	/** The time stamp. */
 	protected String timeStamp;
 	
@@ -21,10 +22,18 @@ public class DefaultPredicateState implements PredicateState{
 	 */
 	public DefaultPredicateState()
 	{
-		predValues = new HashMap<String, Boolean>();
+		predValues = new LinkedHashMap<String, Boolean>();
+		objIDs = null;
 		timeStamp="0";
 	}
-	
+	public DefaultPredicateState(boolean parameterized)
+	{
+		if(parameterized)
+			objIDs = new LinkedHashMap<String, String>();
+		
+		predValues = new LinkedHashMap<String, Boolean>();
+		timeStamp="0";
+	}
 	/**
 	 * Gets the pred values.
 	 *
@@ -52,7 +61,7 @@ public class DefaultPredicateState implements PredicateState{
 	 */
 	public DefaultPredicateState(DefaultPredicateState dpS)
 	{
-		this.predValues = new HashMap<String, Boolean>();
+		this.predValues = new LinkedHashMap<String, Boolean>();
 		for(String key: dpS.predValues.keySet())
 		{
 			this.predValues.put(key, dpS.predValues.get(key));
@@ -150,6 +159,19 @@ public class DefaultPredicateState implements PredicateState{
 	public double getTimestamp() {
 		// TODO Auto-generated method stub
 		return Double.parseDouble(timeStamp);
+	}
+
+	@Override
+	public String getObjID(String Name) {
+		// TODO Auto-generated method stub
+		return objIDs.get(Name);
+	}
+	@Override
+	public void setObjID(String name, String value) {
+		// TODO Auto-generated method stub
+		if(objIDs == null)
+			objIDs = new LinkedHashMap<String, String>();
+		objIDs.put(name, value);
 	}
 	
 }

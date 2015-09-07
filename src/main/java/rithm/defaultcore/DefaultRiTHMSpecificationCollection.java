@@ -2,6 +2,8 @@ package rithm.defaultcore;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 import rithm.core.RitHMSpecification;
 import rithm.core.RitHMSpecificationCollection;
@@ -96,4 +98,16 @@ public class DefaultRiTHMSpecificationCollection extends RitHMSpecificationColle
 		return specLst.iterator();
 	}
 
+	@Override
+	public void forEach(Consumer<? super RitHMSpecification> action) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Spliterator<RitHMSpecification> spliterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

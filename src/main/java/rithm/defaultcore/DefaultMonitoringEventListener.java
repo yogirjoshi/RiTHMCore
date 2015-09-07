@@ -24,7 +24,7 @@ public class DefaultMonitoringEventListener extends MonitoringEventListener{
 	@Override
 	public void MonValuationChanged(RitHMSpecification Spec, RitHMTruthValue TVal) {
 		// TODO Auto-generated method stub
-		
+		System.out.println(Spec.getTextDescription() + ":=" + TVal.getTruthValueDescription());
 	}
 	
 

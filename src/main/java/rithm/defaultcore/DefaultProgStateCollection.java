@@ -2,6 +2,8 @@ package rithm.defaultcore;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 import rithm.core.ProgState;
 import rithm.core.RitHMProgStateCollection;
@@ -66,6 +68,18 @@ public class DefaultProgStateCollection extends RitHMProgStateCollection{
 	public int length() {
 		// TODO Auto-generated method stub
 		return this.progStateList.size();
+	}
+
+	@Override
+	public void forEach(Consumer<? super ProgState> action) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Spliterator<ProgState> spliterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

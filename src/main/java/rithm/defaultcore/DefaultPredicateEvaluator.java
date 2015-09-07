@@ -64,19 +64,31 @@ public class DefaultPredicateEvaluator extends PredicateEvaluator{
 	@Override
 	public PredicateState evaluatePredicates() {
 		// TODO Auto-generated method stub
-		this.prState = new DefaultPredicateState();
+		this.prState = null;
 		DefaultProgramState dpstate   = (DefaultProgramState)pState;
-		DefaultPredicateState dprstate = (DefaultPredicateState) prState;
+
 		HashMap<String, String> dictProg = dpstate.field_dictionary;
-		dprstate.timeStamp = Double.toString(dpstate.getTimestamp());
+		DefaultPredicateState dprstate = null;
 		for(String key: dictProg.keySet())
-		{
-			if(dpstate.getDictionary().get(key).equals(Integer.toString(1)))
-				dprstate.setValue(key, true);
-			else
-				if(includeFalsePredicates)
-					dprstate.setValue(key, false);
+		{	
+
+			if(key.contains("OBJ")){
+				if(this.prState  == null)
+					this.prState = new DefaultPredicateState(true);
+				dprstate = (DefaultPredicateState) prState;
+				prState.setObjID(key, dpstate.getDictionary().get(key));
+			}else{
+				if(this.prState  == null)
+					this.prState = new DefaultPredicateState();
+				dprstate = (DefaultPredicateState) prState;
+				if(dpstate.getDictionary().get(key).equals(Integer.toString(1)))
+					dprstate.setValue(key, true);
+				else
+					if(includeFalsePredicates)
+						dprstate.setValue(key, false);
+			}
 		}
+		dprstate.timeStamp = Double.toString(dpstate.getTimestamp());
 //		if(dpstate.GetVal("trying").equals(Integer.toString(1)))
 //			dprstate.SetValue("trying", true);
 //		if(dpstate.GetVal("granted").equals(Integer.toString(1)))

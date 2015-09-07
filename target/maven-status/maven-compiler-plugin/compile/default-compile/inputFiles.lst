@@ -26,6 +26,7 @@
 /home/y2joshi/workspace/rithmcore/src/main/java/rithm/core/ProgState.java
 /home/y2joshi/workspace/rithmcore/src/main/java/rithm/core/RitHMPredicate.java
 /home/y2joshi/workspace/rithmcore/src/main/java/rithm/core/RitHMLogMessages.java
+/home/y2joshi/workspace/rithmcore/src/main/java/rithm/core/RitHMMonitorTrigger.java
 /home/y2joshi/workspace/rithmcore/src/main/java/rithm/defaultcore/DefaultPredicateState.java
 /home/y2joshi/workspace/rithmcore/src/main/java/rithm/basemonitors/RitHMBaseMonitor.java
 /home/y2joshi/workspace/rithmcore/src/main/java/rithm/defaultcore/DefaultRiTHMPredicate.java

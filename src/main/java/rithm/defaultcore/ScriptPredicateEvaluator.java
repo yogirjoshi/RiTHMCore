@@ -123,9 +123,9 @@ public class ScriptPredicateEvaluator extends DefaultPredicateEvaluator{
 			{
 				LuaTable luaTab = (LuaTable) cscript.eval(currBindings);
 				for(LuaValue luaKey: luaTab.keys())
-					this.prState.setValue(luaKey.toString(), Boolean.valueOf(luaTab.get(luaKey).toString()));
+					if(Boolean.valueOf(luaTab.get(luaKey).toString()))
+						this.prState.setValue(luaKey.toString(), Boolean.valueOf(luaTab.get(luaKey).toString()));
 			}
-//			System.out.println("Hi" + this.prState);
 		}
 		catch(Exception se)
 		{
